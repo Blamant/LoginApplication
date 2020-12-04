@@ -49,32 +49,27 @@ class Credentials {
                 if(inputName.isEmpty() || inputPassword.isEmpty())
                 {
                     Toast.makeText(MainActivity.this, "Voer alstublieft alle gegevens in", Toast.LENGTH_LONG).show();
-                }else{
+                }else if (!validate(inputName, inputPassword)){
 
-                    isValid = validate(inputName, inputPassword);
 
-                    if (!isValid){
 
-                        counter--;
+                    counter--;
 
-                        eAttemptsInfo.setText("Pogingen over: " + String.valueOf(counter));
+                    eAttemptsInfo.setText("Pogingen over: " + String.valueOf(counter));
 
-                        Toast.makeText(MainActivity.this, "Incorrecte gegevens ingevoerd", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Incorrecte gegevens ingevoerd", Toast.LENGTH_LONG).show();
 
-                        if (counter == 0){
-                            eLogin.setEnabled(false);
-                            Toast.makeText(MainActivity.this, "U heeft alle pogingen gebruikt", Toast.LENGTH_LONG).show();
+                    if (counter == 0){
+                        eLogin.setEnabled(false);
+                        Toast.makeText(MainActivity.this, "U heeft alle pogingen gebruikt", Toast.LENGTH_LONG).show();
 
-                        }
-
-                    }else{
-                        Toast.makeText(MainActivity.this, "Login succesvol", Toast.LENGTH_LONG).show();
                     }
 
-                    //New activity
+
+                }else{
+                    Toast.makeText(MainActivity.this, "Login succesvol", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
                     startActivity(intent);
-
                 }
 
             }
