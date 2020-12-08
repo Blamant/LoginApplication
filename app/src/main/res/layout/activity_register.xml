@@ -6,19 +6,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0F3245"
-        tools:context=".RegisterActivity">
+        tools:context=".RegisterActivity" android:id="@+id/tvAlreadyAccount">
 
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:textColor="#C1E8FF"
             android:ems="10"
             android:id="@+id/edtEmail"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.32"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.03"
+            android:hint="Email"
+            android:textColorHint="#7b7d7d"
+            app:layout_constraintTop_toBottomOf="@+id/edtFullName"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtPassword"
+            android:textColorHint="#7b7d7d"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.042"
+            android:hint="Wachtwoord"/>
     <ImageView
             android:layout_width="195dp"
             android:layout_height="188dp" app:srcCompat="@drawable/logo_swag_removebg"
@@ -26,4 +38,31 @@
             app:layout_constraintVertical_bias="0.04000002"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:textColorHint="#7b7d7d"
+            android:id="@+id/edtFullName"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="Volledige naam" app:layout_constraintVertical_bias="0.32"/>
+    <TextView
+            android:text="Heeft u al een account, klik hier om in te loggen"
+            android:layout_width="wrap_content"
+            android:textColor="#C1E8FF"
+            android:layout_height="wrap_content" android:id="@+id/tvAlreadyAnAccount"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+            app:layout_constraintVertical_bias="0.060000002"/>
+    <Button
+            android:text="Registreren"
+            android:layout_width="114dp"
+            android:background="#A92255"
+            android:textColor="#C1E8FF"
+            android:layout_height="51dp" android:id="@+id/btnRegister"
+            app:layout_constraintTop_toBottomOf="@+id/edtPassword"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.060000002"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
