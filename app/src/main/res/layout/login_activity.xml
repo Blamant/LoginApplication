@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0F3245"
-        tools:context=".MainActivity">
+        tools:context=".LoginActivity">
     <EditText
             android:layout_width="255dp"
             android:layout_height="42dp"
@@ -34,6 +34,8 @@
     <Button
             android:text="Login"
             android:layout_width="wrap_content"
+            android:background="#A92255"
+            android:textColor="#C1E8FF"
             android:layout_height="wrap_content" android:id="@+id/btnLogin"
             app:layout_constraintTop_toBottomOf="@+id/edtPassword"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +43,16 @@
     <TextView
             android:text="Pogingen over: 5"
             android:layout_width="wrap_content"
+            android:textColor="#C1E8FF"
             android:layout_height="wrap_content" android:id="@+id/tvAttemptsInfo"
             app:layout_constraintTop_toBottomOf="@+id/btnLogin"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.060000002"/>
+    <ImageView
+            android:layout_width="195dp"
+            android:layout_height="188dp" app:srcCompat="@drawable/logo_swag_removebg"
+            android:id="@+id/ivLogo"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.04000002"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

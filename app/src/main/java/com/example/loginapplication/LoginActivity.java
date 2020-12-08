@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText eEmail;
     private EditText ePassword;
@@ -30,7 +30,7 @@ class Credentials {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login_activity);
 
         eEmail = findViewById(R.id.edtEmail);
         ePassword = findViewById(R.id.edtPassword);
@@ -48,7 +48,7 @@ class Credentials {
 
                 if(inputName.isEmpty() || inputPassword.isEmpty())
                 {
-                    Toast.makeText(MainActivity.this, "Voer alstublieft alle gegevens in", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Voer alstublieft alle gegevens in", Toast.LENGTH_LONG).show();
                 }else if (!validate(inputName, inputPassword)){
 
 
@@ -57,18 +57,18 @@ class Credentials {
 
                     eAttemptsInfo.setText("Pogingen over: " + String.valueOf(counter));
 
-                    Toast.makeText(MainActivity.this, "Incorrecte gegevens ingevoerd", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Incorrecte gegevens ingevoerd", Toast.LENGTH_LONG).show();
 
                     if (counter == 0){
                         eLogin.setEnabled(false);
-                        Toast.makeText(MainActivity.this, "U heeft alle pogingen gebruikt", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, "U heeft alle pogingen gebruikt", Toast.LENGTH_LONG).show();
 
                     }
 
 
                 }else{
-                    Toast.makeText(MainActivity.this, "Login succesvol", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
+                    Toast.makeText(LoginActivity.this, "Login succesvol", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
                     startActivity(intent);
                 }
 
