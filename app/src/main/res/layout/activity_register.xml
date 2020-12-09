@@ -52,10 +52,12 @@
             android:text="Heeft u al een account, klik hier om in te loggen"
             android:layout_width="wrap_content"
             android:textColor="#C1E8FF"
+            android:onClick=""
+            android:clickable="true"
             android:layout_height="wrap_content" android:id="@+id/tvAlreadyAnAccount"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnRegister"
-            app:layout_constraintVertical_bias="0.060000002"/>
+            app:layout_constraintVertical_bias="0.060000002" tools:ignore="OnClick"/>
     <Button
             android:text="Registreren"
             android:layout_width="114dp"

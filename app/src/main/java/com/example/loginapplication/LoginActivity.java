@@ -14,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText eEmail;
     private EditText ePassword;
     private TextView eAttemptsInfo;
+    TextView eRegister;
     private Button eLogin;
 
     String inputEmail = "";
@@ -36,6 +37,7 @@ class Credentials {
         ePassword = findViewById(R.id.edtPassword);
         eAttemptsInfo = findViewById(R.id.tvAttemptsInfo);
         eLogin = findViewById(R.id.btnLogin);
+        eRegister = findViewById(R.id.tvRegisterAnAccount);
 
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +76,14 @@ class Credentials {
 
             }
         });
+        eRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private boolean validate(String email, String password){
