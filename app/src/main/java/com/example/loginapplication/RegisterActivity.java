@@ -5,14 +5,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText eFullName, eEmail, ePassword;
     Button ebtnRegister;
-    TextView ebtnLogin;
+    Button ebtnGoToLogin;
 
 
     @Override
@@ -24,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
         eEmail = findViewById(R.id.edtEmail);
         ePassword = findViewById(R.id.edtPassword);
         ebtnRegister = findViewById(R.id.btnRegister);
-        ebtnLogin = findViewById(R.id.tvAlreadyAnAccount);
+        ebtnGoToLogin = findViewById(R.id.btnGoToLogin);
 
 
 
@@ -52,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        ebtnLogin.setOnClickListener(new View.OnClickListener() {
+        ebtnGoToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);

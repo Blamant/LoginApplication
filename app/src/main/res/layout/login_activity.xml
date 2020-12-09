@@ -56,20 +56,11 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.04000002"/>
     <TextView
-            android:text="Heeft u nog geen account, klik hier om te registreren"
-            android:layout_width="wrap_content"
-            android:textColor="#C1E8FF"
-            android:layout_height="wrap_content" android:id="@+id/tvRegisterAnAccount"
-            app:layout_constraintTop_toBottomOf="@+id/tvAttemptsInfo"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.845"
-            app:layout_constraintHorizontal_bias="0.493"/>
-    <TextView
             android:text="OF"
             android:textColor="#C1E8FF"
             android:textSize="25dp"
             android:layout_width="33dp"
-            android:layout_height="33dp" android:id="@+id/textView"
+            android:layout_height="33dp" android:id="@+id/tvOr"
             app:layout_constraintTop_toBottomOf="@+id/tvAttemptsInfo"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
@@ -78,9 +69,9 @@
             android:text="Registreer"
             android:background="#A92255"
             android:textColor="#C1E8FF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btnGoToRegister"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_width="114dp"
+            android:layout_height="51dp" android:id="@+id/btnGoToRegister"
+            app:layout_constraintTop_toBottomOf="@+id/tvOr"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.060000002"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

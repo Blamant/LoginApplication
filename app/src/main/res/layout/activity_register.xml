@@ -48,16 +48,6 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             android:hint="Volledige naam" app:layout_constraintVertical_bias="0.32"/>
-    <TextView
-            android:text="Heeft u al een account, klik hier om in te loggen"
-            android:layout_width="wrap_content"
-            android:textColor="#C1E8FF"
-            android:onClick=""
-            android:clickable="true"
-            android:layout_height="wrap_content" android:id="@+id/tvAlreadyAnAccount"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnRegister"
-            app:layout_constraintVertical_bias="0.060000002" tools:ignore="OnClick"/>
     <Button
             android:text="Registreren"
             android:layout_width="114dp"
@@ -65,6 +55,25 @@
             android:textColor="#C1E8FF"
             android:layout_height="51dp" android:id="@+id/btnRegister"
             app:layout_constraintTop_toBottomOf="@+id/edtPassword"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.060000002"/>
+    <TextView
+            android:text="OF"
+            android:textColor="#C1E8FF"
+            android:textSize="25dp"
+            android:layout_width="33dp"
+            android:layout_height="33dp" android:id="@+id/tvOr"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.060000002"/>
+    <Button
+            android:text="Login"
+            android:layout_width="wrap_content"
+            android:background="#A92255"
+            android:textColor="#C1E8FF"
+            android:layout_height="wrap_content" android:id="@+id/btnGoToLogin"
+            app:layout_constraintTop_toBottomOf="@+id/tvOr"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.060000002"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
