@@ -37,7 +37,7 @@ class Credentials {
         ePassword = findViewById(R.id.edtPassword);
         eAttemptsInfo = findViewById(R.id.tvAttemptsInfo);
         eLogin = findViewById(R.id.btnLogin);
-        eRegister = findViewById(R.id.tvRegisterAnAccount);
+        eRegister = findViewById(R.id.btnGoToRegister);
 
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
