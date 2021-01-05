@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0F3245"
-        tools:context=".RegisterActivity" android:id="@+id/tvAlreadyAccount">
+        tools:context=".RegisterActivity">
 
     <EditText
             android:layout_width="wrap_content"
