@@ -70,7 +70,7 @@ class Credentials {
 
                 }else{
                     Toast.makeText(LoginActivity.this, "Login succesvol", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(LoginActivity.this, activity_search.class);
+                    Intent intent = new Intent(LoginActivity.this, activity_zoeken.class);
                     startActivity(intent);
                 }
 

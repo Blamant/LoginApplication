@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">Kappersapp</string>
+    
+    <string-array name="kapperszaken">
+        <item>Java</item>
+        <item>Barbaras</item>
+        <item>Henks barber shop</item>
+        <item>Barbaras</item>
+        <item>Henks barber shop</item>
+        <item>Barbaras</item>
+        <item>Henks barber shop</item>
+        <item>Barbaras</item>
+        <item>Henks barber shop</item>
+        <item>Barbaras</item>
+        <item>Henks barber shop</item>
+        <item>Barbaras</item>
+        <item>Henks barber shop</item>
+        <item>Barbaras</item>
+    </string-array>
+    
+    <string-array name="description_kapperszaken">
+        <item>Java test logo</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+        <item>Descriptie van de kapperszaak</item>
+    </string-array>
 </resources>
