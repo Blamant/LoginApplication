@@ -44,7 +44,7 @@ public class activity_search extends AppCompatActivity {
         mylist.add("Haarlem");
         mylist.add("Leiden");
 
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mylist);
+        arrayAdapter = new ArrayAdapter<>(this, R.layout.mylistappearance, mylist);
         listView.setAdapter(arrayAdapter);
     }
 
