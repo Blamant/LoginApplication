@@ -1,6 +1,9 @@
 package com.example.loginapplication;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -19,11 +24,6 @@ public class LoginActivity extends AppCompatActivity {
 
     String inputEmail = "";
     String inputPassword = "";
-
-class Credentials {
-    String email = "Admin";
-    String password = "12345678";
-}
 
     boolean isValid = false;
     private int counter = 5;
@@ -42,37 +42,49 @@ class Credentials {
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String email = eEmail.getText().toString().trim();
+                final String password = ePassword.getText().toString().trim();
 
-                String inputName = eEmail.getText().toString();
-                String inputPassword = ePassword.getText().toString();
-
-                //Check if credentials are correct
-
-                if(inputName.isEmpty() || inputPassword.isEmpty())
-                {
-                    Toast.makeText(LoginActivity.this, "Voer alstublieft alle gegevens in", Toast.LENGTH_LONG).show();
-                }else if (!validate(inputName, inputPassword)){
-
-
-
-                    counter--;
-
-                    eAttemptsInfo.setText("Pogingen over: " + String.valueOf(counter));
-
-                    Toast.makeText(LoginActivity.this, "Incorrecte gegevens ingevoerd", Toast.LENGTH_LONG).show();
-
-                    if (counter == 0){
-                        eLogin.setEnabled(false);
-                        Toast.makeText(LoginActivity.this, "U heeft alle pogingen gebruikt", Toast.LENGTH_LONG).show();
-
-                    }
-
-
-                }else{
-                    Toast.makeText(LoginActivity.this, "Login succesvol", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(LoginActivity.this, activity_zoeken.class);
-                    startActivity(intent);
+                if(TextUtils.isEmpty(email)){
+                    eEmail.setError("Email is verplicht");
+                    return;
                 }
+                if(TextUtils.isEmpty(password)){
+                    ePassword.setError("Wachtwoord is verplicht");
+                    return;
+                }
+
+                //Start ProgressBar first (Set visibility VISIBLE)
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Starting Write and Read data with URL
+                        //Creating array for parameters
+                        String[] field = new String[2];
+                        field[0] = "email";
+                        field[1] = "password";
+                        //Creating array for data
+                        String[] data = new String[2];
+                        data[0] = email;
+                        data[1] = password;
+                        PutData putData = new PutData(getString(R.string.server_ip)+"/LoginRegister/login.php", "POST", field, data);
+                        if (putData.startPut()) {
+                            if (putData.onComplete()) {
+                                String result = putData.getResult();
+                                Toast.makeText(LoginActivity.this, result, Toast.LENGTH_LONG).show();
+                                //End ProgressBar (Set visibility to GONE)
+                                if(result.equals("Login Success")){
+                                    Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        }
+                        //End Write and Read data with URL
+                    }
+                });
+
 
             }
         });
@@ -84,16 +96,5 @@ class Credentials {
             }
         });
 
-    }
-
-    private boolean validate(String email, String password){
-
-        Credentials credentials = new Credentials();
-
-        if(email.equals(credentials.email) && password.equals(credentials.password))
-        {
-            return true;
-        }
-        return false;
     }
 }

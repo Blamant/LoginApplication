@@ -68,14 +68,15 @@ public class RegisterActivity extends AppCompatActivity {
                         data[0] = eFullName.getText().toString().trim();
                         data[1] = email;
                         data[2] = password;
-                        PutData putData = new PutData("http://192.168.2.139/LoginRegister/signup.php", "POST", field, data);
+                        PutData putData = new PutData(getString(R.string.server_ip)+"/LoginRegister/signup.php", "POST", field, data);
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = putData.getResult();
                                 Toast.makeText(RegisterActivity.this, result, Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                startActivity(intent);
-                                finish();
+                                if (result.equals("Sign Up Success")){
+                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                }
                                 //End ProgressBar (Set visibility to GONE)
                             }
                         }

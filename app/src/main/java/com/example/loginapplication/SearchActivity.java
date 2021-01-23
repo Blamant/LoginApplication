@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-public class activity_zoeken extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 

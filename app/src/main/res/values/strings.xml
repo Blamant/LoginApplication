@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Kappersapp</string>
 
+    <string name="server_ip">http://192.168.2.139</string>
+
     <string-array name="kapperszaken">
         <item>Java</item>
         <item>Barbaras</item>
